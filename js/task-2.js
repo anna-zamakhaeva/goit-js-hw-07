@@ -32,3 +32,6 @@ const elements = images
   .join("");
 
 gallery.insertAdjacentHTML("beforeend", elements);
+
+
+
