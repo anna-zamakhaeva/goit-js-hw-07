@@ -12,9 +12,9 @@ const boxes = document.querySelector("#boxes");
 let sizes = 30;
 
 createBtn.addEventListener("click", createMarkup);
-destroyBtn.addEventListener("click", clear);
+destroyBtn.addEventListener("click", destroyBoxes);
 
-function clear() {
+function destroyBoxes() {
   boxes.innerHTML = "";
   input.value = "";
   sizes = 30;
@@ -29,7 +29,7 @@ function createMarkup() {
 }
 
 function createBoxes(amount) {
-  clear();
+  destroyBoxes();
   for (let i = 0; i < amount; i++) {
     const box = document.createElement("div");
     box.style.width = `${sizes}px`;
