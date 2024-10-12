@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+:root {
+  --font-family: "Montserrat", sans-serif;
+}
 
 body {
   margin: 16px;
@@ -16,8 +19,7 @@ body {
   letter-spacing: 0.04em;
   padding-left: 24px;
   padding-right: 24px;
-  font-family: "Montserrat", sans-serif;
-}
+  }
 
 button {
   border-radius: 8px;
@@ -32,7 +34,14 @@ button {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+button:hover,
+button:focus {
+  background-color: #6C8CFF;
+}
+
 
 ul {
   list-style: none;
@@ -40,10 +49,9 @@ ul {
   padding: 0;
 }
 
-h2 {
+h2, h1 {
   margin: 0;
   margin-bottom: 16px;
-  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 24px;
   line-height: 1.33;
@@ -51,8 +59,20 @@ h2 {
   color: #2e2f42
   }
 
+  input {
+    border: 1px solid #808080;
+      border-radius: 4px;
+      padding: 8px 16px;
+      color: #2e2f42;
+      outline: none;
+      transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  input:focus {
+    border-color: #2e2f42;
+  }
 
-/* --LIST-- */
+
+/* **TASK-1** */
 
 .categories-list {
 display: flex;
@@ -68,7 +88,7 @@ padding: 24px;
   gap: 16px;
   border-radius: 8px;
   padding: 16px;
-  width: 392px;
+  max-width: 392px;
   background-color: #f6f6fe;
   margin: 0;
 }
@@ -76,7 +96,6 @@ padding: 24px;
 .item-list {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   flex-direction: column;
   gap: 8px;
 }
@@ -89,16 +108,29 @@ padding: 24px;
   border-radius: 4px;
 }
 
-/* **GALLERY** */
+/* **TASK-2** */
 
-.gallery li{
+.gallery {
   display: flex;
   flex-wrap: wrap;
-  width: calc((100% - 72px) / 3);
+  gap: 48px 24px;
+  max-width: 1440px;
+}
+.img {
+  width: calc((100% - 96px) / 3);
   height: auto;
+  overflow: hidden;
 }
 
-/* **FORM** */
+/* **TASK-3** */
+.anonym-input {
+  width: 360px;
+  height: 40px;
+  margin-bottom: 16px;
+}
+
+
+/* **TASK-4** */
 .login-form {
   display: flex;
   align-items: flex-start;
@@ -120,15 +152,12 @@ padding: 24px;
   justify-content: flex-start;
   flex-direction: column;
   gap: 8px;
-  border: transparent;
-  border-color: #808080;
-  height: 40px;
+    height: 40px;
   width: 360px;
-  border-radius: 4px;
 }
 
 
-/* **WIDGET** */
+/* **TASK-5** */
 
 .widget {
   margin: 0 auto;
@@ -141,7 +170,7 @@ padding: 24px;
 } 
 
 
-/* **SCRIPT** */
+/* **TASK-6** */
 
 .controls {
   display: flex;
@@ -171,12 +200,10 @@ padding: 24px;
   background-color: #f6f6fe;
 }
 .controls-input {
-  border: 1px solid #808080;
-  border-radius: 8px;
-  padding-left: 8px;
   width: 150px;
   height: 40px;
-  color: #2e2f42;
+  border-radius: 8px;
+  text-align: center;
 }
 
 .controls-create-btn {
@@ -185,4 +212,9 @@ padding: 24px;
 }
 .controls-destroy-btn {
   background-color:#ff4e4e;
+  width: 120px;
+}
+.controls-destroy-btn:hover,
+.controls-destroy-btn:focus {
+  background-color: #ff7070;
 }
