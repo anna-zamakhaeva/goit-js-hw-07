@@ -9,34 +9,34 @@ const createBtn = document.querySelector("button[data-create]");
 const destroyBtn = document.querySelector("button[data-destroy]");
 const boxes = document.querySelector("#boxes");
 
-let sizes = 30;
-
 createBtn.addEventListener("click", createMarkup);
 destroyBtn.addEventListener("click", destroyBoxes);
 
 function destroyBoxes() {
   boxes.innerHTML = "";
-  input.value = "";
   sizes = 30;
 }
 
 function createMarkup() {
-  if (input.value < 1 || input.value > 100) {
+  const amount = Number(input.value)
+    if (amount < 1 || amount > 100) {
     return;
   }
-
-  createBoxes(input.value);
+  createBoxes(amount);
+  input.value = "";
 }
 
 function createBoxes(amount) {
-  destroyBoxes();
+  boxes.innerHTML = "";
+  const boxesCol = [];
+  let sizes = 30;
   for (let i = 0; i < amount; i++) {
     const box = document.createElement("div");
     box.style.width = `${sizes}px`;
     box.style.height = `${sizes}px`;
     box.style.backgroundColor = getRandomHexColor();
-
-    boxes.append(box);
+    boxesCol.push(box);
     sizes += 10;
   }
+  boxes.append(...boxesCol);
 }
